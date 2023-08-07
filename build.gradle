@@ -20,12 +20,18 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-redis-reactive'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-starter-webflux'
+	implementation 'org.mariadb.jdbc:mariadb-java-client'
+
+	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
+
 	runtimeOnly 'com.mysql:mysql-connector-j'
 
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'io.projectreactor:reactor-test'
 
-	implementation 'it.ozimov:embedded-redis:0.7.2' // 테스트 용도로 내장 서버 Redis 환경 구성
+	testImplementation 'it.ozimov:embedded-redis:0.7.2' // 테스트 용도로 내장 서버 Redis 환경 구성
+	// https://data-make.tistory.com/754
 }
 
 tasks.named('test') {
