@@ -24,8 +24,13 @@ class PersonRedisRepositoryTest {
     @Autowired
     EntityManager em;
 
+    @AfterEach
+    void afterEach() {
+        personRedisRepository.deleteAll();
+    }
+
     @Test
-    @DisplayName("")
+    @DisplayName("redis save test")
     void saveTest() throws Exception {
         // given
         Person person = Person.builder()
