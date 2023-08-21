@@ -19,6 +19,7 @@ public class Person {
     private String id;
     @Indexed
     private String firstName;
+    @Indexed
     private String lastName;
     private int age;
     private String address;
